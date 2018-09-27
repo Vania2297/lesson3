@@ -6,12 +6,9 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите два числа: ");
+            Console.Write("Введите пять чисел: ");
             int sum = NewMethod();
-
-            //Console.WriteLine("введите ожидаемый ответ");
-            //int c = Convert.ToInt32(Console.ReadLine());
-
+            
             for (int i = 1; i <= 3; i++)
             {
                 Console.WriteLine("введите ожидаемый ответ");
