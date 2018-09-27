@@ -42,7 +42,10 @@ namespace ConsoleApp2
         {
             int a = Convert.ToInt32(Console.ReadLine());
             int b = Convert.ToInt32(Console.ReadLine());
-            int sum = a + b;
+            int d = Convert.ToInt32(Console.ReadLine());
+            int g = Convert.ToInt32(Console.ReadLine());
+            int s = Convert.ToInt32(Console.ReadLine());
+            int sum = a + b + d + g + s;
             return sum;
         }
     }
