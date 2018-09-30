@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
@@ -10,21 +6,25 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("введите сумму кредита:");
-            double s = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("введите проценты кредита:");
-            double p = Convert.ToInt32(Console.ReadLine());
-            double everymanth = s / 12;
-            double summa = s;
-            double sp = 0;
+            Console.WriteLine("Enter credit amount:");
+            string amountInput = Console.ReadLine();
+            decimal amount = Convert.ToDecimal(amountInput);
+
+            Console.WriteLine("Enter credit interest:");
+            string interestInput = Console.ReadLine();
+            decimal interest = Convert.ToDecimal(interestInput) / 100;
+           
+            decimal monthlyPayment = amount / 12;
+            decimal mainDebt = amount;
+            decimal totalPayments = 0;
             for (int i = 1; i <= 12; i++)
             {
-                double prosent = summa * (p / 100);
-                Console.WriteLine(i+" месяц = "+(everymanth + prosent));
-                summa -= everymanth;
-                sp += prosent;
+                decimal interestPayment = amount * interest;
+                Console.WriteLine(i + " месяц = " + (monthlyPayment + interestPayment));
+                amount -= monthlyPayment;
+                totalPayments += interestPayment;
             }
-            Console.WriteLine("Общая сумма выплат составит: "+(s+sp));
+            Console.WriteLine("Общая сумма выплат составит: " + (amount + totalPayments));
             Console.ReadKey();
         }
     }
